@@ -51,7 +51,6 @@ public class HardwareRobot {
         distanceSensor = hwmp.get(DistanceSensor.class, "Color Sensor");
 
         ResetAllEncoders();
-        ResetServoPositions();
 
     }
 
@@ -91,8 +90,8 @@ public class HardwareRobot {
 
     public void ResetServoPositions() {
 
-        jewelServoLift.setPosition(0.1);
-        jewelServoTurn.setPosition(0.33);
+        jewelServoLift.setPosition(0.33);
+        jewelServoTurn.setPosition(0.42);
 
     }
 

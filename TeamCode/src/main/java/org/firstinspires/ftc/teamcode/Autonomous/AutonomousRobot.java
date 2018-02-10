@@ -124,7 +124,7 @@ public class AutonomousRobot extends LinearOpMode {
     void CheckJewel() {
 
         robot.jewelServoLift.setPosition(1);
-        robot.jewelServoTurn.setPosition(0.42);
+        robot.jewelServoTurn.setPosition(0.44);
 
         robot.colorSensor.enableLed(true);
 
@@ -192,7 +192,8 @@ public class AutonomousRobot extends LinearOpMode {
         }
 
         robot.jewelServoLift.setPosition(0.55);
-        robot.jewelServoTurn.setPosition(0.57);
+        WaitFor(0.15);
+        robot.jewelServoTurn.setPosition(0.56);
 
         WaitFor(0.5);
 

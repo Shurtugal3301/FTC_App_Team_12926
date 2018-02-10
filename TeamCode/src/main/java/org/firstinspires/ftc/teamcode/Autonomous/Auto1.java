@@ -86,8 +86,8 @@ public class Auto1 extends AutonomousRobot {
 
             // Move forward
             robot.frontLeft.setPower(-0.5);
-            robot.frontRight.setPower(0.5);
-            robot.backLeft.setPower(-0.5);
+            robot.frontRight.setPower(0.6);
+            robot.backLeft.setPower(-0.6);
             robot.backRight.setPower(0.5);
 
             WaitFor(0.75);
@@ -165,7 +165,15 @@ public class Auto1 extends AutonomousRobot {
         robot.backLeft.setPower(0.5);
         robot.backRight.setPower(-0.5);
 
-        WaitFor(0.3);
+        if (location == AutoPosition.RED_FAR || location == AutoPosition.BLUE_FAR) {
+
+            WaitFor(0.15);
+
+        } else if (location == AutoPosition.RED_CLOSE || location == AutoPosition.BLUE_CLOSE) {
+
+            WaitFor(0.3);
+
+        }
 
         robot.StopDriveMotors();
 
@@ -187,7 +195,18 @@ public class Auto1 extends AutonomousRobot {
 
         robot.StopDriveMotors();
 
+        robot.liftDrive.setPower(0.5);
+
         WaitFor(0.5);
+
+        while (robot.liftDrive.getCurrentPosition() < 1800) {
+
+            telemetry.addData("Lift", "Position: %d Target 1050", robot.liftDrive.getCurrentPosition());
+            telemetry.update();
+
+        }
+
+        robot.liftDrive.setPower(0);
 
         // Turn right
         robot.frontLeft.setPower(-0.4);
@@ -208,7 +227,7 @@ public class Auto1 extends AutonomousRobot {
 
         if (location != AutoPosition.BLUE_CLOSE && location != AutoPosition.RED_CLOSE) {
 
-            WaitFor(0.3);
+            WaitFor(0.22);
 
         } else {
 
@@ -324,7 +343,7 @@ public class Auto1 extends AutonomousRobot {
         robot.backLeft.setPower(0.4);
         robot.backRight.setPower(0.4);
 
-        WaitFor(0.25);
+        WaitFor(0.3);
 
         robot.StopDriveMotors();
 
@@ -359,21 +378,21 @@ public class Auto1 extends AutonomousRobot {
 
         WaitFor(0.5);
 
+    }
+
+    private void redFarDrive() {
+
         // Move forward
         robot.frontLeft.setPower(0.5);
         robot.frontRight.setPower(-0.5);
         robot.backLeft.setPower(0.5);
         robot.backRight.setPower(-0.5);
 
-        WaitFor(0.2);
+        WaitFor(0.1);
 
         robot.StopDriveMotors();
 
-        WaitFor(0.5);
-
-    }
-
-    private void redFarDrive() {
+        WaitFor(0.7);
 
         // Strafe left
         robot.frontLeft.setPower(0.4);
@@ -381,7 +400,7 @@ public class Auto1 extends AutonomousRobot {
         robot.backLeft.setPower(-0.4);
         robot.backRight.setPower(-0.4);
 
-        WaitFor(0.3);
+        WaitFor(0.45);
 
         robot.StopDriveMotors();
 
