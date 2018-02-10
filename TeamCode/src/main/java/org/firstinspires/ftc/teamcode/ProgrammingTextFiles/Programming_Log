@@ -1,0 +1,60 @@
+Programming Log
+------------------------------
+
+MM/DD Name:
+
+12/23 Dristi: Code for compliance wheels to grab glyph
+
+11/28 Dristi: Removed rotation to sense Vuforia.
+        Adjusted some distances for robot pathing to cryptobox.
+        Adjusted wait times and timeouts in encoder/turn methods.
+        Fixed some incorrect turning angles after testing.
+        Cleaned up excess comments.
+
+11/25  Dristi: Created a case to determine the path of robot based on field position.
+       Created methods for each field position.
+       Created method for knocking off jewel (CheckJewel)
+            - robot will now turn to knock off the jewel instead of driving forward
+       Made WaitFor method to replace code for wait times.
+
+11/21 Dristi: Added/fixed the EncoderDrive method and the turning methods.
+       Took measurements for path distances on the field and coded in paths.
+       Added code for wait times in between actions.
+       Added another set of motors for wheels and corresponding code for drive/turn methods
+
+11/20 Dristi: Created AutonomousRobot class with encoder methods and instance fields for imu, vuforia, and colorsensor
+         Added more TankOp controls for arms/linear lift.
+         Cleaned up code and added more comments.
+
+11/19 Thomas: By the looks of things, all of the code needs to be commented. When I say 'commented,'
+    I mean two things: one, that you have small comments of sections, varibles, and whatnot, two, that
+    code blocks and or logic is explained in detail either in a block comment or external documentation.
+    I have removed some extra code and otherwise simplified what was already here, but you guys need
+    to look over everything. Additionally, I'd suggest making a default autonomous class with basic
+    movement and turning commands. Like a class called "Autonomous" with encoderDrive, encoderTurn,
+    placeGlyph, etc.
+
+11/18 Dristi, Carson, Andrea: Got encoders to return correct color of jewel
+       Got Vuforia to return correct VuMark
+       Got Encoders to run correctly through test class
+       Added IMU class
+       Fixed autonomous sequence to return Vuforia > Color Sensor > drive forward
+
+10/19 Dristi: Set robot motors' runMode to run using encoders.
+       Added vuforia parameters, relic trackables, and relic template to hardware.
+       Initialized vuforia licence key and camera in robot constructor
+       Added conditional statement to check for VuMark are store the detected enum as a string.
+
+10/12 Dristi: Added encoder constants (need to be changed) and encoderDrive method to Hardware Robot
+
+10/4 Dristi: Added controller inputs to the TankOp mode. Created POVOp mode class and added
+     POV controller inputs.
+        Tank: Each joystick can increase/decrease the power of its respective motor (left joystick controls leftdrive motor)
+        POV: Uses a math algorithm to move robot forward/backward bases on the y input of the left joystick and turn by using
+        the x input of the right joystick
+
+9/11 Thomas: This is where you will log what you added, edited, or created each day.
+    Please make a post whenever you do anything to the code. This post should serve
+    as an example of the correct format for a log post and new posts should be placed
+    above existing ones. Logging not only prevents confusion, but can help in debugging
+    and problem shooting as well. Thanks, and I look forward to an exciting season!
