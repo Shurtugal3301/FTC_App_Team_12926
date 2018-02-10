@@ -92,7 +92,7 @@ public class HardwareRobot {
     public void ResetServoPositions() {
 
         jewelServoLift.setPosition(0.1);
-        jewelServoTurn.setPosition(0.42);
+        jewelServoTurn.setPosition(0.33);
 
     }
 

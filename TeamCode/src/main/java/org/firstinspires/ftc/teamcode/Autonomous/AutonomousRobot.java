@@ -191,7 +191,7 @@ public class AutonomousRobot extends LinearOpMode {
 
         }
 
-        robot.jewelServoLift.setPosition(0.4);
+        robot.jewelServoLift.setPosition(0.55);
         robot.jewelServoTurn.setPosition(0.57);
 
         WaitFor(0.5);
@@ -202,7 +202,7 @@ public class AutonomousRobot extends LinearOpMode {
 
         if (robot.colorSensor.red() >= 30 && robot.colorSensor.blue() <= 30) {
 
-            robot.jewelServoLift.setPosition(0.4);
+            robot.jewelServoLift.setPosition(0.55);
             robot.jewelServoTurn.setPosition(0.6);
 
             WaitFor(0.5);
@@ -225,7 +225,7 @@ public class AutonomousRobot extends LinearOpMode {
 
         } else if (robot.colorSensor.blue() >= 15 && robot.colorSensor.red() <= 30) {
 
-            robot.jewelServoLift.setPosition(0.4);
+            robot.jewelServoLift.setPosition(0.55);
             robot.jewelServoTurn.setPosition(0.6);
 
             WaitFor(0.5);

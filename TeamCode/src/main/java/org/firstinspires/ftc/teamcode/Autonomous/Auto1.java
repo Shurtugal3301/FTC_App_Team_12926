@@ -41,7 +41,7 @@ public class Auto1 extends AutonomousRobot {
 
         telemetry.update();
 
-        robot.ResetAllEncoders();
+        robot.jewelServoLift.setPosition(0);
 
         //turn off the color sensor LED
         robot.colorSensor.enableLed(false);
@@ -59,7 +59,7 @@ public class Auto1 extends AutonomousRobot {
 
         GetVuMark();
 
-        robot.jewelServoLift.setPosition(0.1);
+        robot.jewelServoLift.setPosition(0.4);
 
         GrabGlyph();
 
@@ -78,7 +78,7 @@ public class Auto1 extends AutonomousRobot {
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(-0.5);
 
-            WaitFor(0.6);
+            WaitFor(0.7);
 
             robot.StopDriveMotors();
 
@@ -90,7 +90,7 @@ public class Auto1 extends AutonomousRobot {
             robot.backLeft.setPower(-0.5);
             robot.backRight.setPower(0.5);
 
-            WaitFor(0.7);
+            WaitFor(0.75);
 
             robot.StopDriveMotors();
 
@@ -356,6 +356,20 @@ public class Auto1 extends AutonomousRobot {
         WaitFor(0.675);
 
         robot.StopDriveMotors();
+
+        WaitFor(0.5);
+
+        // Move forward
+        robot.frontLeft.setPower(0.5);
+        robot.frontRight.setPower(-0.5);
+        robot.backLeft.setPower(0.5);
+        robot.backRight.setPower(-0.5);
+
+        WaitFor(0.2);
+
+        robot.StopDriveMotors();
+
+        WaitFor(0.5);
 
     }
 
